@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contents</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/stlye.css">
+    <link rel="icon" type="image/x-icon" href="../../web/images/favicon.ico">
+</head>
+<body class="nohero">
+    <header>
+        <div class="container">
+            <div class="container-small">
+                <a href="index.html" class="headA">LOGER</a>
+                <button type="button" class="headC">
+                    <span class="fa fa-bars" title="menu"></span>
+                </button>
+            </div>
+            <nav class="headB">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html">CONTENTS</a></li>
+                    <li><a href="index.html">LOG</a></li>
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a href="index.html">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="post">
+        <div class="container">
+            <div class="bread">
+                <ol>
+                    <li><a href="./index.html">Top</a></li>
+                    <li><a href="#">기사목록</a></li>
+                </ol>
+            </div>
+            <h1>라이프로그 시작하기</h1>
+            <img src="./image/images/life.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footA">
+                <h2>LOGGER</h2>
+                <p>주소 IT 전문 출반사 <br>
+                    <a href="http://logger.nett">http://logger.nett</a>
+                </p>
+                <nav class="footD">
+                    <ul>
+                        <li><a href=""><i class="fab fa-twitter" title="twitter"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook" title="Facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus" title="google-plus"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram" title="instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-youtube" title="youtube"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footB">
+                <div>
+                    <h2>ABOUT</h2>
+                    <ul>
+                        <li><a href="">설립</a></li>
+                        <li><a href="">주소</a></li>
+                        <li><a href="">지도</a></li>
+                        <li><a href="">스태프</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>SUPPORT</h2>
+                    <ul>
+                        <li><a href="">다운로드</a></li>
+                        <li><a href="">주소</a></li>
+                        <li><a href="">지도</a></li>
+                        <li><a href="">문의</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>CONTENTS</h2>
+                    <ul>
+                        <li><a href="">설립</a></li>
+                        <li><a href="">주소</a></li>
+                        <li><a href="">지도</a></li>
+                        <li><a href="">스태프</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footC">
+                &copy; LOGGER corp, All rights Reserved
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    <script>
+        $(function () {
+            $(".headC").click(function () {
+                $(".headB").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

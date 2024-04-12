@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- extenal js -->
+    <script src="myscript.js"></script>
+
+    <script>
+        //javascript commnet
+        // => 한 줄 주석 
+        document.write("<p>밥 좀 주셈</p>");
+        /* //자바스크립트 명령문 뒤;에는 항상 세미 클론을 써야 한다.
+        /아닐경우에 에러가 나지 않을 수도 있지만 예상치 않은 코드
+        / 오류가 발 생 할수 있다 */
+        
+        function change(){
+            document.getElementById("change").innerHTML="I'm so sad";
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1>How to Use Javascript?</h1>
+    <div id="change">I'm so sad~~~</div>
+    <button onclick="change();">test</button>
+    <script>
+        
+        document.getElementById("change").innerHTML="I'm so happy";
+        
+    </script>
+
+    <hr>
+
+    <!-- inline js -->
+    <a href="javascript:void(0)"; onclick="document.getElementById('change').innerHTML=Date()">
+    슬프거나 말거나 현재 시간이나 알려주셈</a>
+
+</body>
+</html>
+
+

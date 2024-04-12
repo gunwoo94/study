@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            
+        }
+        #fix{position: fixed; top: 50%;  background-color: black; width: 100%; color: white; padding: 10px; text-align: center; margin: 0; }
+        .parallax{
+            background-image: url(/images/poket.jpg);
+            background-size: 100%;
+            min-height: 400px; background-repeat: no-repeat;
+            background-attachment: fixed;    
+        }
+        .parallax2{
+            background-image: url(/images/2011.jpg);
+            background-size: 100%;
+            min-height: 400px; background-repeat: no-repeat;
+            background-attachment: fixed;  
+        }
+        @media only screen and (max-device-width: 1000px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+    .parallax2 {
+    background-attachment: scroll;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <p id="fix">Scroll Up and Down this page to see the parallax scrolling effect.</p>
+
+    <div class="parallax"></div>
+
+    <div style="height:1000px;background-color:red;font-size:36px">
+        This div is just here to enable scrolling.
+        Tip: Try to remove the background-attachment property to remove the scrolling effect.
+    </div>
+
+    <div class="parallax2"></div>
+</body>
+
+</html>
