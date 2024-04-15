@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    
+    <p>사칙 연산 : +, -, * , / , %(나머지)</p>
+    <p>비교 연산자: 결과값을 불리언으로 반환 (true , false)</p>
+    <p>논리 연산자: &&(and) ,||(or) 결과값을 불리언으로 반환 (true,false)</p>
+    <p>증강 연산자: ++ --</p>
+    <p>대입 연산자: =, +=, *= ,/= ,/=</p>
+    <p>등위 연산자: ==(값 비교) ===(타입까지 비교) !=, !==</p> 
+    <p>not 연산자: ! </p>
+
+
+    <script>
+        //사칙 연산 말고 오칙 연산 말고 육칙 연산 말고 칠칙연산 말고 팔칙 연산 말고 구칙 연산 말고 십칙연산 ㅋㅋ 
+        //변수 a 와 b 를 선언하고 각각 35,20으로 초기화
+        let a =35 , b = 20;
+
+        //사칙연산 
+
+        console.log("덧셈:" + (a+b)); 
+        console.log("뺼셈:" + (a-b));
+        console.log("곱셈:" + (a*b));
+        console.log("나눗셈:" + (a/b));
+        console.log("나눗셈:" + (a%b));
+        console.log("--------------------------------");
+
+        //비교연산
+        console.log(a > b);
+        console.log(a < b);
+        console.log(a >= b);
+        console.log(a <= b);
+        console.log("--------------------------------");
+
+        //논리 연산
+        // a가 5와 7의 공배수인가? 그리고(and) => && 또는 or   
+        console.log((a % 5 == 0 )&& (a % 7 ==0));
+        // a가 5와 7의 공배수인가? 그리고(and) => &&    
+        console.log((b % 5 == 0 )&& (b % 7 ==0));
+
+        // true && true => true
+        // true && false => false
+        // false && true => false
+        // false && false => false
+
+         // a가 5와 7의 공배수인가? 그리고(and) => && 또는 or  || 
+         console.log((a % 5 == 0 )|| (a % 7 ==0));
+        // a가 5와 7의 공배수인가? 그리고(and) => &&    
+        console.log((b % 5 == 0 ) || (b % 7 ==0));
+
+        // true || true => true
+        // true || false => true
+        // false || true => true
+        // false || false => false
+
+        console.log("--------------------------------");
+        //증감 연산 
+        // - 연산자가 변수 뒤에 붙으면 우선순위가 가장 뒤 
+        // - 연산자가 변수 앞에 붙으면 우선순위가 가장 앞 
+
+        console.log(a);
+        a++; //a++ => a = a + 1;
+        console.log(a);
+        a--;
+        console.log(a); //35
+        console.log(a++); //35
+        console.log(a); //36
+        console.log(a--); //36
+        console.log(a); //35 
+        console.log("--------------------------------");
+        let c = a;
+        console.log(c); //35
+        c = a++ //35
+        console.log(c);
+        console.log(a);
+        console.log(a);
+        c = --a;
+        console.log(c); //35
+
+        let d = a++ + ++b; // 35 + 21
+        console.log(d);
+
+        //대입 연산
+        console.log("--------------------------------");
+        let e =5;
+        console.log(e);
+        e += 3; //e = d +3
+        console.log(e);
+        e *= 2; //e = e * 2 ;
+        console.log(e);
+        
+        //등위 연산 
+        console.log(a);
+        console.log(b);
+        console.log(a == b);
+        console.log(a === b);
+        console.log(a != b);
+        console.log(a !== b);
+        console.log("--------------------------------");
+        a =7; 
+        b ="7";
+        console.log(a == b);
+        console.log(a === b);
+        console.log(a != b);
+        console.log(a !== b);
+        //not 연산자
+        console.log("--------------------------------");
+        console.log(ture);
+        console.log(!true);
+        console.log(!false);
+
+        let age =17;
+        // if(age <=18){
+        if(!age > 17){
+            alert("go home!!");
+        }
+        
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
