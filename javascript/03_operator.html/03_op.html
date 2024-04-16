@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>홀짝 판정</h1>
+
+    n1: <input type="number" id="n1"><br>
+    n2: <input type="number" id="n2"><br>
+    <button type="button"onclick="check()">홀짝판정</button>
+    <div>숫자 1과 2의 합은 <mark><span id="result">짝수 or 홀수</mark></span>입니다</div>
+    
+    
+    <script>
+    //input 엘리먼트를 변수에 저장.
+    //출력할 엘리먼트 변수에 저장.
+
+            
+    
+
+   
+
+    function check(){
+        //두 input 엘리먼트의 값을 가져와 합계를 구함
+        //3항식으로 판별하고 정답을 출력할 위치에 넣어줌    
+    let n1 = document.getElementById("n1").value*1;
+    let n2 = document.getElementById("n2").value*1;
+    let result = document.getElementById("result");
+        // document.getElementById("result").innerHTML
+    result.innerHTML=(n1+n2) %2 ==0? "짝수" : "홀수";
+    
+    }
+
+    </script>
+</body>
+</html>

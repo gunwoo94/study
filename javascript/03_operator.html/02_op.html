@@ -19,10 +19,18 @@
 
         //prompt로 두 수를 입력 받아 앞의 수가 크면 "Java"를 , 뒤의 수가 크거나 같으면 "Python"을 콘솔에 출력하시오. 3항식 사용
 
-        let num = prompt();
+     /*    let num = prompt();
         let num1 = prompt();
         let result = num > num1? "Java" : "Python";
         console.log(result); 
+    */
+        
+
+    //사용자로부터 입력받은 숫자가 양수인 경우 "양수입니다", 0인 경우 "0입니다", 음수인 경우 "음수입니다"를 출력하는 코드를 3항식으로 작성하세요.
+
+    let num = prompt()*1;
+    let result = num > 0 ? "양수입니다" : num ==0? "0입니다" : "음수입니다"
+    console.log(result);
 
     </script>
 </body>
