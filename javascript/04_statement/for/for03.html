@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>구구단</h1>
+
+    <script>
+        // //구구단 2단 - 콘솔에
+        // for(let i = 1; i <=9; i++){
+        //     console.log("2x" + i + "=" + 2*i);
+        // }
+
+
+    </script>
+    <h3>구구단 <span id="dan"></span>단</h3>
+    <div><p id="gugu"></p></div>
+    
+
+    <script>
+        //프롬프트로 입력받은 값을 정수로 형변환하여 변수 num에 저장한다.
+        let num =parseInt(prompt("구구단 몇 단을 출력할까요?(2~9)>>"));
+        
+            
+        
+        let gugu = document.getElementById('gugu');
+
+        
+        let dan = document.getElementById('dan');
+        
+        
+        dan.innerHTML = num;
+        let result="";//
+        if(num >=2 && num<=9){
+        for(let i = 1; i <=9; i++){
+            //+= 대입연산 : 처리된 문자열을 result에 추가한다. 
+            result +="<p>"+num+"*"+i+ "=" + num*1 + "</p>"; 
+        }
+        //변수 gugu에 저장된 element의 텍스트로 reuslt에 저장된 값을 넣는다.
+        gugu.innerHTML = result;
+        }else{
+            alert("2~9 사이의 숫자를 입력해주세요.")
+        }
+    
+        // gugu.innerHTML = result;
+    </script>
+</body>
+</html>
