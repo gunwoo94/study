@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num =12345.45678;
+        let num_str="12345.45678";
+        
+        console.log(num.toString() + 999);
+        console.log(Number(num_str) + 999);
+        console.log((parseInt(num_str)) + 999);
+        console.log((parseFloat(num_str)) + 999);
+
+        console.log(num.toFixed()); //소숫점 0자리 - 소숫점 없음
+        console.log(num.toFixed(3)); //소숫점 3자리까지 -반올림
+
+        console.log(num.toExponential(3)); // 소숫점  3자리 내려라.
+        console.log(num.toPrecision(3)); //
+
+        console.log(num.toLocaleString('kr-KR')); //한국식 숫자표기
+        console.log(num.toLocaleString('de-DE')); //유럽식 숫자표기
+        console.log(num.toLocaleString('us-US')); //미국식 숫자표기
+        
+        
+    </script>
+</body>
+</html>
