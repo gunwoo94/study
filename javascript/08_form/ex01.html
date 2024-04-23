@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1보다 크고 10보다 작은 숫자를 입력하시오</p>
+    <input type="text" id="num">
+
+    <button type="button" onclick="check()">입력값 검증</button>
+
+    <div id="msg"></div>
+
+    <script>
+        //값이 있는지
+        //값이 숫자인지
+        //범위 안에 있는 값인지
+        
+        function check(){
+            let msg = document.getElementById("msg");
+            let num = document.getElementById("num").value;
+            if(num =="" || num ==null){
+                msg.innerHTML = "값이 없습니다."
+                return;
+            }
+            if(isNaN(num)){
+                msg.innerHTML ="숫자만 입력"
+                return;
+            }
+            if(num >1 && num <11){
+                msg.innerHTML ="검증"
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

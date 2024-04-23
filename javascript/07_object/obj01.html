@@ -22,6 +22,7 @@
             }
         }
         let mary = new Person("jane","mary",2345);
+        //{firstName: "jane"lastname:"mary" id:"2345"}
         let tom = new Person("mogly","tom",1345);
         console.log(mary);
         
@@ -35,8 +36,11 @@
         const friends = [mary, tom ,steve];
         let f ="";
         for(let idx in friends){
-            console.log(friends[idx].lastName);
+            console.log(friends[idx]);
             console.log("______________");
+            for(let key in friends[idx]){
+                console.log(friends[idx][key]);
+            }
         }
     </script>
 </body>

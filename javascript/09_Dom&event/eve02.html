@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // alert("wow");
+            // 쿠키 허용 차단 
+            let cookie = document.getElementById("cookie");
+            let txt ="";
+            if(navigator.cookieEnabled){
+                txt = "쿠키 쓸 수 있다";
+            }else{
+                txt = "쿠키 안좋아 한다"
+            }
+            cookie.innerHTML = txt;
+        }
+    </script>
+</head>
+<body>
+    <h1>onload</h1>
+    <p id="cookie"></p>
+
+
+</body>
+</html>

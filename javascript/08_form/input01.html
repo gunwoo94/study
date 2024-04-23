@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 폼 유효성 검사  -->
+    <h1>Form Validation</h1> 
+    <h2>로그인</h2>
+    <form action="" method="post" name="frm1" >
+        id: <input type="text" name ="id" id = "id" required><br>
+        pw: <input type="password" name="password" id="password"><br>
+        <!-- <input type="submit"><br> -->
+        <!-- <input type="button" value="보내기"> -->
+        <button type="button" onclick="check()">로그인</button>
+    <!-- </form>
+     <form action="" method="post" name="frm" >
+        id: <input type="text" name ="id"required><br>
+        pw: <input type="password" name="password" ><br>
+         <input type="submit"><br> -->
+        <!-- <input type="button" value="보내기"> -->
+        <!-- <button type="button" onclick="check()">로그인</button> -->
+    <!-- </form> --> 
+
+    <script>
+        console.log(document.frm1); //name
+        console.log(document.forms[1]); // Dom selector
+        // console.log(document.getElementById) 
+        // const check = function() - 이렇게 많이 만듬.
+        function check(){
+            // document.getElementById("id").value;
+            console.log(frm1.id.value)
+            if(frm1.id.value == "" ||frm1.id.value == null){
+                alert("input your id..");
+                frm1.id.focus();
+                return;
+            } 
+            if(frm1.password.value == "" ||frm1.password.value == null){
+                alert("input your password..");
+                frm1.password.focus();
+                return;
+            } 
+            frm1.submit();
+        }
+    
+    </script>
+</body>
+</html>

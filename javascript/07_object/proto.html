@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Person object를 찍어내기 위한 틀 - class
+        // function Person(name,age,gender){
+        //     this.name=name,
+        //     this.age=age,
+        //     this.gender=gender;
+        // }
+
+        class Person{
+            constructor(name,age,gender){
+            this.name = name,
+            this.age = age,
+            this.gender = gender;
+            }
+
+        }
+        let p1 = new Person ("tom", 33 , "m");
+        // let p1 = {"name":"tom", "age":33 ,"gender": "m"}
+        let p2 = new Person ("jane", 43 , "f");
+
+        const persons = [p1,p2]
+        for(let i in persons){
+            // console.log(i);// index 0번칸 , index 1번칸 //
+            // console.log(persons[i]);// persons index 자체
+            for(let key in persons[i]){
+                // console.log(key + " = " + persons[i][key]);
+                console.log(persons[i]);
+            }
+        }
+
+        // const arr = [3,7,9,10];
+        // // console.log(arr[0]);
+        // for(let i in arr){
+        //     console.log(arr[i]);
+        // }
+
+        p2.height = 193;
+        console.log(p2.height);
+        //prototype
+        Person.prototype.height = 173;
+        let p3 = new Person("sam",31,"m");
+        console.log(p3);
+
+        //object 에 함수를 추가
+        Person.prototype.lunch = function(){
+            if(this.gender == 'm'){
+                console.log("굶으셈");
+            }else{
+                console.log("만난거드셈");
+            }
+        }
+        p2.lunch();
+    </script>
+</body>
+</html>
