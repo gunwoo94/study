@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: black;
+  width: 500px;
+  height: 500px;
+}
+
+.title {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.record_column {
+  height: 100px;
+  max-height: 100px;
+  /* overflow-y: scroll; */
+}
+.timestamp {
+  width: 200px;
+  margin: 0 auto;
+
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.record_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style: none;
+  margin-right: 13px;
+}
+li span {
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn_column {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.start_btn {
+  padding: 25px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0 0 5px 2px green;
+  color: #fff;
+  font-weight: 600;
+  background-color: green;
+  opacity: 0.9;
+}
+.stop_btn {
+  padding: 25px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0 0 5px 2px red;
+  color: #fff;
+  font-weight: 600;
+  background-color: red;
+  opacity: 0.9;
+}
+
+.lab_btn {
+  padding: 25px 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0 0 5px 2px gray;
+  color: #fff;
+  font-weight: 600;
+  background-color: gray;
+  opacity: 0.9;
+}
+.reset_btn {
+  padding: 25px 18px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  box-shadow: 0 0 5px 2px #353b48;
+  color: #fff;
+  font-weight: 600;
+  background-color: #353b48;
+  opacity: 0.9;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">stopwatch</div>
+        <h1 class="timestamp">00:00:00</h1>
+        <div class="record_column">
+            <ul class="record_list"></ul>
+        </div>
+        <div class="btn_column">
+            <input type="button" value="랩" class="lab_btn">
+            <input type="button" value="시작" class="start_btn">
+        </div>
+    </div>
+
+    <script>
+        const timeStamp = document.querySelector(".timestamp");
+        const recordList = document.querySelector(".record_list");
+        const startBtn = document.querySelector(".start_btn");
+        const labBtn = document.querySelector(".lab_btn");
+        
+        let minutes =0;
+        let seconds =0;
+        let milisec =0;
+        let count =0;
+        let timer;
+
+        function countTime(){
+        if(startBtn.value =="시작"){
+            startBtn.value ="중단";
+            startBtn.className = "stop_btn";
+            labBtn.value ="랩";
+            labBtn.className ="lab_btn"
+       
+        
+        timer = setInterval(function(){
+            count +=1;
+            minutes = Math.floor(count/6000);
+            let a1 = count %6000;
+            seconds = Math.floor(a1/100);
+            let a2 = a1 % 100; 
+            milisec = a2;
+            ClockPaint();
+
+        },10);
+        }else if (startBtn.value =="중단" && count !=0){
+            clearInterval(timer);
+            startBtn.value ="시작";
+            startBtn.className="start_btn";
+            labBtn.value= "재설정";
+            labBtn.className ="reset_btn";
+        }
+    
+    }
+
+    function ClockPaint() {
+            timeStamp.innerText = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds
+                }:${milisec < 10 ? "0" + milisec : milisec}`;  
+        }
+
+     
+
+        
+        function HandleRecord(event) {
+            if (count == 0) {
+                event.preventDefault(); 
+            } else if (count !== 0 && labBtn.value == "랩") {
+                const li = document.createElement("li");
+                const span = document.createElement("span");
+                span.innerText = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds
+                    }:${milisec < 10 ? "0" + milisec : milisec}`;
+                li.appendChild(span);
+                recordList.prepend(li);  
+            } else {
+                HandleReset(); 
+            }
+        }
+
+        function HandleReset() {
+            count = 0;
+            minutes = 0;
+            seconds = 0;
+            milisec = 0;
+            if (document.querySelector(".record_list li")) {
+                const li = document.querySelectorAll("li"); 
+                for (let i = 0; i < li.length; i++) {
+                    recordList.removeChild(li[i]); 
+                }
+            }
+            ClockPaint(); 
+        }
+
+        function init() {
+            startBtn.addEventListener("click", countTime); 
+            labBtn.addEventListener("click", HandleRecord);
+        }
+
+        init(); 
+    
+
+    </script>
+
+
+</body>
+</html>

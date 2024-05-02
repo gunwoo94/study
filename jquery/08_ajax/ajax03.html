@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <button id="btn">데이터</button>
+    <div id="txt">Date here</div>
+    <script>
+         $(function(){
+            $('#btn').click(function(){
+                let url= "test.json";   
+            //    $.ajax({
+                //get 방식으로 한번에 ajax 받는거.
+               $.get({
+                    // type:"get", // post , put , delete
+                    url:url, //요청경로
+                    dataType:"json",
+                    // contentType:"aplication/json"
+                    success: function(result){
+                        console.log(result);
+                        print(result);
+                    },
+                    error:function(err){
+                        console.log(err);
+                    },
+                    complete: function(){
+                        console.log("항상나오는거")
+                    }
+               }); 
+            });
+            const print= function(result){
+                $('#txt').html(result);
+        }
+        });
+    </script>
+</body>
+</html>

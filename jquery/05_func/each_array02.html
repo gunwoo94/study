@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul id="hong" data-age = "33"></ul>
+    <script>
+        $(function(){
+            let obj = {"name":"홍길동"};
+            obj.age = 19; 
+            //오브젝트 확장 "age" : 19 ;
+            obj.hobby = {"sports":"golf","instrument" : "drum"};
+            //"hobby:{"sports":"golf","instrument" : "drum"} ; 와 같음
+            console.log(obj); 
+            $.extend(obj, {gender: "male", wife: "olivia" })
+            ////extend(): 다른 객체를 분해해서 특정 객체의 원소를 확장
+            console.log(obj);
+            console.log($('#hong').data('age'));
+
+            // $.each(obj, function(key, item){
+            //     if(key=="hobby"){
+            //         $('#hong').append($('<li id="hobby"></li>').text(key+" :  뭐게?"));
+            //         $.each(item, function(key, val){
+            //            $('#hobby').append($('<dl></dl>').addClass("dd_content").append($('<dd></dd>').text(key+" :  "+val)));
+                        
+            //             // $('.dd_content').append($('<dd></dd>').text(key+" :  "+val)); 
+            //         });
+            //     }else{
+            //         $('#hong').append($('<li></li>').text(key+" :  "+item));
+            //     }
+            // });
+            $.each(obj,function(key,val){
+                $('#hong').append($('<li>').text(key + " = " + val));
+
+            });
+        });
+    </script>
+</body>
+</html>

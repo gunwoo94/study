@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+</head>
+<body>
+    <ul>
+        <li data-age="15">홍길동</li>
+        <li data-age="21">강감찬</li>
+        <li data-age="33">을지문덕</li>
+        <li data-age="5">광개토대왕</li>
+        <li data-age="67">세종</li>
+    </ul>
+    <hr>
+    <h3>성인목록</h3>
+    <div id="adult"></div>
+    <script>
+        $(function(){
+
+            let result = []; //내용이 길때 push 와 함께 빈 어레이로 받는다.
+            // let result = new Array();
+            
+            $('li').each(function(){
+               let age = $(this).data('age');
+               if(age >= 18){
+            //     $('#adult').append($('<p>').text($(this).text()));
+            //    }
+                result.push($(this).text())
+            }
+            });
+            console.log(result); //어레이에 강감찬 을지문덕 세종 ; 
+            //어레이로 받을때 
+            $.each(result,function(i,v){
+                $('#adult').append($('<p>').text(i+"="+v));
+            });
+            function checkAudlt(){
+                let age = $(this).data('age');
+                return age >= 18;
+            }
+            result = $('li').filter(checkAudlt); //checkAudlt 함수를 밖에서 만들고 return 으로 .
+            console.log(result); //li 3개가 들어옴 
+            result.each(function(){
+                let txt = $(this).text();
+                $('#adult').append($('<p>').text(txt));
+            });
+        }); 
+    </script>
+</body>
+</html>

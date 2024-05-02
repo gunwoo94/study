@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+</head>
+<body>
+    <h1>event on, off</h1>
+    
+    <button>can you click me?</button>
+
+    <script>
+        //on 으로 사용하면 여러게 event 를 사용 할 수 있고
+        //off로 종료 할 수 있음.
+        $(function(){
+            // $('button').mouseover(function(){
+
+            // });
+            $('button').on("click wheel",function(e){
+                console.log(e.type);
+                alert(e.type);
+            });
+            const password = "1234"
+            let input = prompt ("암호 입력 >>>>>>");
+            if(password === input){
+                $('button').off("click");
+            }
+        });
+    </script>
+</body>
+</html>
